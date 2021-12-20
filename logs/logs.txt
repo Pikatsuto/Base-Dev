@@ -1,0 +1,5 @@
+Start logs file : 2021-12-20 17:52:05
+
+2021-12-20 17:52:05 / (U)>> ? dev
+2021-12-20 17:52:05 / [E]>> Help helpCommande : Help file not existe
+2021-12-20 17:52:05 / [E]>> Help helpCommande : Help file not existe

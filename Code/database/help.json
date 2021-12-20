@@ -1,0 +1,14 @@
+{
+    "help":[
+        {
+            "name": "clear",
+            "Utilitis": "Clear Terminal",
+            "arguments": false
+        },
+        {
+            "name": "? dev",
+            "Utilitis": "Helping for dev",
+            "arguments": false
+        }
+    ]
+}

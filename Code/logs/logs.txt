@@ -1,0 +1,418 @@
+Start logs file : 2021-12-20 00:08:48
+
+2021-12-20 00:08:48 / [E]>> Help update : module 'command.Console' has no attribute 'helpJson'
+2021-12-20 00:08:48 / [E]>> Main startInit : update() missing 1 required positional argument: 'helpJson'
+2021-12-20 00:10:12 / [E]>> Help update : module 'command.Console' has no attribute 'helpJson'
+2021-12-20 00:10:16 / (U)>> ?
+2021-12-20 00:10:16 / [E]>> Help helpCommande : 'Utilitis'
+2021-12-20 00:13:20 / [E]>> Console startInit : name 'helpUpdate' is not defined
+2021-12-20 00:14:01 / (U)>> ?
+2021-12-20 00:14:01 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:14:01 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:14:56 / (U)>> ?
+2021-12-20 00:14:56 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:14:56 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:15:02 / (U)>> ?
+2021-12-20 00:15:02 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:15:02 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:16:41 / (U)>> ?
+2021-12-20 00:16:41 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:16:41 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:16:48 / (U)>> ?
+2021-12-20 00:16:48 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:16:48 / [E]>> Help helpCommande : 'arguments'
+2021-12-20 00:17:16 / (U)>> ?
+2021-12-20 00:17:16 / [E]>> Help helpCommande : 'bool' object is not iterable
+2021-12-20 00:17:16 / [E]>> Help helpCommande : 'bool' object is not iterable
+2021-12-20 00:18:50 / (U)>> ?
+2021-12-20 00:18:50 / [E]>> Help helpCommande : local variable 'helpArguments' referenced before assignment
+2021-12-20 00:18:51 / [E]>> Help helpCommande : local variable 'helpArguments' referenced before assignment
+2021-12-20 00:19:25 / (U)>> ?
+2021-12-20 00:19:58 / (U)>> ?
+2021-12-20 00:20:31 / (U)>> ?
+2021-12-20 00:21:59 / (U)>> ?
+2021-12-20 00:25:42 / (U)>> ?
+2021-12-20 00:26:11 / (U)>> ?
+2021-12-20 00:27:24 / (U)>> ?
+2021-12-20 00:28:11 / (U)>> ?
+2021-12-20 00:28:32 / (U)>> ?
+2021-12-20 00:29:26 / (U)>> ?
+2021-12-20 00:36:12 / (U)>> ?
+2021-12-20 00:36:12 / [E]>> Help helpCommande : Help file not existe
+2021-12-20 00:36:12 / [E]>> Help helpCommande : Help file not existe
+2021-12-20 00:38:03 / (U)>> ?
+2021-12-20 00:38:09 / (U)>> ? dev
+2021-12-20 00:38:09 / [E]>> Main console : startInit() takes 0 positional arguments but 1 was given
+2021-12-20 00:38:09 / [E]>> Main console : startInit() takes 0 positional arguments but 1 was given
+2021-12-20 00:38:47 / (U)>> ?
+2021-12-20 00:38:50 / (U)>> ? dev
+2021-12-20 00:39:29 / (U)>> ?
+2021-12-20 00:39:34 / (U)>> ? dev
+2021-12-20 01:18:38 / (U)>> clear
+2021-12-20 01:18:38 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:18:38 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:19:14 / (U)>> clear
+2021-12-20 01:19:14 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:19:14 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:20:12 / (U)>> clear
+2021-12-20 01:20:12 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:20:12 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:20:51 / (U)>> clear
+2021-12-20 01:20:51 / [E]>> Main console : 'str' object is not callable
+2021-12-20 01:20:51 / [E]>> Main console : 'str' object is not callable
+2021-12-20 01:21:54 / (U)>> clear
+2021-12-20 01:21:54 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:21:54 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:23:38 / (U)>> clear
+2021-12-20 01:23:38 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:23:38 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:24:21 / (U)>> clear
+2021-12-20 01:24:21 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:24:21 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:24:47 / (U)>> clear
+2021-12-20 01:24:47 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:24:47 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:27:31 / (U)>> clear
+2021-12-20 01:27:31 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:27:31 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:27:56 / (U)>> clear
+2021-12-20 01:27:56 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:27:56 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:29:03 / (U)>> clear
+2021-12-20 01:29:03 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:29:03 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:29:39 / (U)>> clear
+2021-12-20 01:29:39 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:29:40 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:30:06 / (U)>> clear
+2021-12-20 01:30:06 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:30:06 / [E]>> Main console : 'bool' object is not subscriptable
+2021-12-20 01:39:59 / (U)>> clear
+2021-12-20 01:39:59 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:39:59 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:40:26 / (U)>> clear
+2021-12-20 01:40:26 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:40:26 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:40:50 / (U)>> clear
+2021-12-20 01:40:50 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:40:50 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:41:21 / (U)>> clear
+2021-12-20 01:41:21 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:41:21 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:42:28 / (U)>> clear
+2021-12-20 01:42:28 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:42:28 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:43:27 / (U)>> clear
+2021-12-20 01:43:27 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:43:27 / [E]>> Main console : local variable 'inputArguments' referenced before assignment
+2021-12-20 01:46:50 / (U)>> clear
+2021-12-20 01:46:50 / [E]>> Main console : name 'inputArguments' is not defined
+2021-12-20 01:46:50 / [E]>> Main console : name 'inputArguments' is not defined
+2021-12-20 01:48:21 / (U)>> clear
+2021-12-20 01:48:21 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:48:21 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:49:03 / (U)>> clear
+2021-12-20 01:49:03 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:49:03 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:50:01 / (U)>> clear
+2021-12-20 01:50:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:50:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:53:13 / (U)>> clear
+2021-12-20 01:53:13 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:53:13 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:53:45 / (U)>> clear
+2021-12-20 01:53:45 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:53:45 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 01:56:07 / (U)>> clear
+2021-12-20 01:56:07 / [L]>> command "['clear']" no fund
+2021-12-20 01:57:19 / (U)>> help
+2021-12-20 01:57:19 / [L]>> command "['help']" no fund
+2021-12-20 01:57:28 / (U)>> ? dev
+2021-12-20 01:57:28 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 01:58:38 / (U)>> clear
+2021-12-20 01:58:38 / [L]>> command "['clear']" no fund
+2021-12-20 01:59:06 / (U)>> clear
+2021-12-20 01:59:06 / [L]>> command "['clear']" no fund
+2021-12-20 02:00:04 / (U)>> ? dev
+2021-12-20 02:00:04 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:00:43 / (U)>> ? dev
+2021-12-20 02:00:43 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:00:47 / (U)>> ?
+2021-12-20 02:00:47 / [L]>> command "['?']" no fund
+2021-12-20 02:00:49 / (U)>> ?
+2021-12-20 02:00:49 / [L]>> command "['?']" no fund
+2021-12-20 02:01:36 / (U)>> ? nodev
+2021-12-20 02:01:36 / [L]>> command "['?', 'nodev']" no fund
+2021-12-20 02:04:22 / (U)>> ?
+2021-12-20 02:04:22 / [L]>> command "['?']" no fund
+2021-12-20 02:06:15 / (U)>> ?
+2021-12-20 02:06:15 / [L]>> command "['?']" no fund
+2021-12-20 02:07:55 / (U)>> ?
+2021-12-20 02:07:55 / [L]>> command "['?']" no fund
+2021-12-20 02:08:03 / (U)>> ? dev
+2021-12-20 02:08:03 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:08:31 / (U)>> ? dev
+2021-12-20 02:08:31 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:10:28 / (U)>> ? dev
+2021-12-20 02:10:28 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:11:22 / (U)>> ? dev
+2021-12-20 02:11:22 / [E]>> Main console : 'function' object is not subscriptable
+2021-12-20 02:11:22 / [E]>> Main console : 'function' object is not subscriptable
+2021-12-20 02:11:33 / (U)>> ? dev
+2021-12-20 02:11:33 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:12:14 / (U)>> ? dev
+2021-12-20 02:12:14 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:13:24 / (U)>> ?
+2021-12-20 02:13:24 / [L]>> command "['?']" no fund
+2021-12-20 02:13:29 / (U)>> ? dev
+2021-12-20 02:13:29 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:13:34 / (U)>> ? nedov
+2021-12-20 02:13:34 / [L]>> command "['?', 'nedov']" no fund
+2021-12-20 02:13:41 / (U)>> ? nodev
+2021-12-20 02:13:41 / [L]>> command "['?', 'nodev']" no fund
+2021-12-20 02:14:24 / (U)>> ?
+2021-12-20 02:14:24 / [L]>> command "['?']" no fund
+2021-12-20 02:14:29 / (U)>> ? dev
+2021-12-20 02:14:29 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:15:13 / (U)>> ?
+2021-12-20 02:15:13 / [L]>> command "['?']" no fund
+2021-12-20 02:16:01 / (U)>> help
+2021-12-20 02:16:01 / [L]>> command "['help']" no fund
+2021-12-20 02:16:06 / (U)>> ?
+2021-12-20 02:16:06 / [L]>> command "['?']" no fund
+2021-12-20 02:17:04 / (U)>> ?
+2021-12-20 02:17:04 / [L]>> command "['?']" no fund
+2021-12-20 02:17:09 / (U)>> ? dev
+2021-12-20 02:17:09 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:17:13 / (U)>> help
+2021-12-20 02:17:13 / [L]>> command "['help']" no fund
+2021-12-20 02:18:13 / (U)>> help
+2021-12-20 02:18:13 / [L]>> command "['help']" no fund
+2021-12-20 02:18:17 / (U)>> ?
+2021-12-20 02:18:17 / [L]>> command "['?']" no fund
+2021-12-20 02:18:19 / (U)>> ? dev
+2021-12-20 02:18:19 / [L]>> command "['?', 'dev']" no fund
+2021-12-20 02:18:22 / (U)>> help
+2021-12-20 02:18:22 / [L]>> command "['help']" no fund
+2021-12-20 02:19:36 / (U)>> ?
+2021-12-20 02:19:36 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:19:36 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:19:52 / (U)>> ?
+2021-12-20 02:19:52 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:19:52 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:20:53 / (U)>> ?
+2021-12-20 02:20:53 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:20:53 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:21:22 / (U)>> ?
+2021-12-20 02:21:22 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:21:22 / [E]>> Main console : local variable 'command' referenced before assignment
+2021-12-20 02:22:22 / (U)>> ?
+2021-12-20 02:22:48 / (U)>> ?
+2021-12-20 02:22:52 / (U)>> ? dev
+2021-12-20 02:22:55 / (U)>> help
+2021-12-20 02:23:04 / (U)>> clear
+2021-12-20 02:23:17 / (U)>> aaa
+2021-12-20 02:23:19 / (U)>> aaa
+2021-12-20 02:24:18 / (U)>> aaa
+2021-12-20 02:24:18 / [L]>> command "['aaa']" no fund
+2021-12-20 02:24:21 / (U)>> ?
+2021-12-20 02:24:21 / [L]>> command "['?']" no fund
+2021-12-20 02:28:12 / (U)>> aaa
+2021-12-20 02:28:12 / [L]>> command "['aaa']" no fund
+2021-12-20 02:28:13 / (U)>> ?
+2021-12-20 02:28:15 / (U)>> aaa
+2021-12-20 02:28:15 / [L]>> command "['aaa']" no fund
+2021-12-20 02:28:19 / (U)>> clear
+2021-12-20 02:28:19 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 02:28:19 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 02:53:41 / (U)>> clear
+2021-12-20 02:53:41 / [E]>> Main console : list index out of range
+2021-12-20 02:53:41 / [E]>> Main console : list index out of range
+2021-12-20 02:55:57 / (U)>> clear
+2021-12-20 02:55:57 / [L]>> command "clear" no fund
+2021-12-20 02:57:27 / (U)>> clear
+2021-12-20 02:57:27 / [L]>> command "clear" no fund
+2021-12-20 02:58:39 / (U)>> clear
+2021-12-20 02:58:39 / [L]>> command "clear" no fund
+2021-12-20 02:59:06 / (U)>> clear
+2021-12-20 02:59:06 / [E]>> Main console : list index out of range
+2021-12-20 02:59:06 / [E]>> Main console : list index out of range
+2021-12-20 02:59:49 / (U)>> clear
+2021-12-20 02:59:49 / [L]>> command "clear" no fund
+2021-12-20 03:00:20 / (U)>> clear
+2021-12-20 03:00:20 / [L]>> command "clear" no fund
+2021-12-20 03:02:56 / (U)>> clear
+2021-12-20 03:02:56 / [L]>> command "clear" no fund
+2021-12-20 03:03:37 / (U)>> clear
+2021-12-20 03:03:37 / [L]>> command "clear" no fund
+2021-12-20 03:04:24 / (U)>> clear
+2021-12-20 03:04:24 / [L]>> command "clear" no fund
+2021-12-20 03:04:55 / (U)>> ? dev
+2021-12-20 03:04:55 / [L]>> command "? dev" no fund
+2021-12-20 03:06:33 / (U)>> clear
+2021-12-20 03:06:33 / [L]>> command "clear" no fund
+2021-12-20 03:07:10 / (U)>> ?
+2021-12-20 03:07:10 / [L]>> command "?" no fund
+2021-12-20 03:07:23 / (U)>> ? dev
+2021-12-20 03:07:23 / [E]>> Main console : 'dev'
+2021-12-20 03:07:23 / [E]>> Main console : 'dev'
+2021-12-20 03:09:09 / (U)>> clear
+2021-12-20 03:09:09 / [E]>> Main console : 0
+2021-12-20 03:09:09 / [E]>> Main console : 0
+2021-12-20 03:09:21 / (U)>> clear
+2021-12-20 03:09:21 / [L]>> command "clear" no fund
+2021-12-20 03:10:04 / (U)>> clear
+2021-12-20 03:10:04 / [E]>> Main console : list index out of range
+2021-12-20 03:10:04 / [E]>> Main console : list index out of range
+2021-12-20 03:10:37 / (U)>> clear
+2021-12-20 03:10:37 / [E]>> Main console : string indices must be integers
+2021-12-20 03:10:37 / [E]>> Main console : string indices must be integers
+2021-12-20 03:12:53 / (U)>> clear
+2021-12-20 03:12:53 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:12:53 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:13:48 / (U)>> clear
+2021-12-20 03:13:48 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:13:48 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:15:17 / (U)>> clear
+2021-12-20 03:15:32 / (U)>> clear
+2021-12-20 03:16:24 / (U)>> clear
+2021-12-20 03:16:24 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:16:24 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:18:38 / (U)>> clear
+2021-12-20 03:18:38 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:18:38 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:18:43 / (U)>> ?
+2021-12-20 03:18:43 / [E]>> Main console : 'none'
+2021-12-20 03:18:43 / [E]>> Main console : 'none'
+2021-12-20 03:18:52 / (U)>> ? dev
+2021-12-20 03:18:52 / [E]>> Main console : 'none'
+2021-12-20 03:18:52 / [E]>> Main console : 'none'
+2021-12-20 03:20:24 / (U)>> ?
+2021-12-20 03:20:24 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:20:24 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:20:59 / (U)>> ? dev
+2021-12-20 03:20:59 / [E]>> Main console : 'dev'
+2021-12-20 03:20:59 / [E]>> Main console : 'dev'
+2021-12-20 03:21:22 / (U)>> ? dev
+2021-12-20 03:21:22 / [E]>> Main console : 'dev'
+2021-12-20 03:21:22 / [E]>> Main console : 'dev'
+2021-12-20 03:23:30 / (U)>> ?
+2021-12-20 03:23:30 / [E]>> Main console : '?'
+2021-12-20 03:23:30 / [E]>> Main console : '?'
+2021-12-20 03:23:36 / (U)>> ? dev
+2021-12-20 03:23:36 / [E]>> Main console : '?'
+2021-12-20 03:23:36 / [E]>> Main console : '?'
+2021-12-20 03:24:38 / (U)>> ?
+2021-12-20 03:24:38 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:24:38 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:24:48 / (U)>> ? dev
+2021-12-20 03:24:48 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:24:48 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:25:44 / (U)>> ? dev
+2021-12-20 03:25:44 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:25:44 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:29:46 / (U)>> ? dev
+2021-12-20 03:29:46 / [E]>> Main console : name 'In' is not defined
+2021-12-20 03:29:46 / [E]>> Main console : name 'In' is not defined
+2021-12-20 03:30:14 / (U)>> ? dev
+2021-12-20 03:30:14 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:30:14 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:30:23 / (U)>> clear
+2021-12-20 03:30:23 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:30:23 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:31:26 / (U)>> ?
+2021-12-20 03:31:26 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:31:26 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:31:31 / (U)>> ? dev
+2021-12-20 03:31:31 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:31:31 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:32:06 / (U)>> ? dev
+2021-12-20 03:32:06 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:32:06 / [E]>> Main console : local variable 'arguments' referenced before assignment
+2021-12-20 03:32:49 / (U)>> ? dev
+2021-12-20 03:32:54 / (U)>> ?
+2021-12-20 03:32:56 / (U)>> ?
+2021-12-20 03:33:01 / (U)>> clear
+2021-12-20 03:33:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:33:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:34:45 / (U)>> ?
+2021-12-20 03:34:47 / (U)>> ? dev
+2021-12-20 03:34:49 / (U)>> ?
+2021-12-20 03:34:54 / (U)>> ? dev
+2021-12-20 03:34:56 / (U)>> help
+2021-12-20 03:35:37 / (U)>> ?
+2021-12-20 03:35:37 / [E]>> Main console : '?'
+2021-12-20 03:35:37 / [E]>> Main console : '?'
+2021-12-20 03:36:00 / (U)>> ?
+2021-12-20 03:36:00 / [E]>> Main console : '?'
+2021-12-20 03:36:00 / [E]>> Main console : '?'
+2021-12-20 03:36:49 / (U)>> ?
+2021-12-20 03:37:14 / (U)>> ?
+2021-12-20 03:37:14 / [E]>> Main console : '?'
+2021-12-20 03:37:14 / [E]>> Main console : '?'
+2021-12-20 03:37:28 / (U)>> ?
+2021-12-20 03:37:28 / [E]>> Main console : '?'
+2021-12-20 03:37:28 / [E]>> Main console : '?'
+2021-12-20 03:41:01 / (U)>> clear
+2021-12-20 03:41:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:41:01 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:41:06 / (U)>> ?
+2021-12-20 03:41:10 / (U)>> clear
+2021-12-20 03:41:10 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:41:10 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:42:46 / (U)>> ?
+2021-12-20 03:42:48 / (U)>> ? dev
+2021-12-20 03:42:51 / (U)>> help
+2021-12-20 03:46:31 / (U)>> clear
+2021-12-20 03:46:31 / [E]>> Main console : 'none'
+2021-12-20 03:46:31 / [E]>> Main console : 'none'
+2021-12-20 03:48:57 / (U)>> ? dev
+2021-12-20 03:48:57 / [E]>> Main console : 'default'
+2021-12-20 03:48:57 / [E]>> Main console : 'default'
+2021-12-20 03:52:33 / (U)>> ?
+2021-12-20 03:52:33 / [E]>> Main console : 'default'
+2021-12-20 03:52:33 / [E]>> Main console : 'default'
+2021-12-20 03:53:44 / (U)>> ?
+2021-12-20 03:53:47 / (U)>> ? dev
+2021-12-20 03:53:51 / (U)>> clear
+2021-12-20 03:53:51 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:53:51 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:54:28 / (U)>> clear
+2021-12-20 03:54:28 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:54:28 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:54:59 / (U)>> clear
+2021-12-20 03:54:59 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:54:59 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:55:59 / (U)>> clear
+2021-12-20 03:55:59 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:55:59 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:56:13 / (U)>> clear
+2021-12-20 03:56:13 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:56:13 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:57:32 / (U)>> clear
+2021-12-20 03:57:32 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:57:32 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:58:37 / (U)>> clear
+2021-12-20 03:58:37 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 03:58:37 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2021-12-20 04:00:17 / (U)>> ?
+2021-12-20 04:00:20 / (U)>> ? dev
+2021-12-20 04:00:23 / (U)>> help
+2021-12-20 04:00:25 / (U)>> clear
+2021-12-20 12:05:22 / (U)>> ?
+2021-12-20 12:05:27 / (U)>> ? dev
+2021-12-20 12:05:32 / (U)>> clear
+2021-12-20 12:33:18 / (U)>> ?
+2021-12-20 12:33:23 / (U)>> clear
+2021-12-20 12:33:26 / (U)>> ? dev
+2021-12-20 13:39:00 / (U)>> clear
+2021-12-20 13:39:27 / (U)>> ?
+2021-12-20 13:39:32 / (U)>> ? dev
+2021-12-20 17:34:26 / (U)>> clear
+2021-12-20 17:52:28 / (U)>> ? dev
+2021-12-20 18:14:47 / (U)>> ? dev
+2021-12-20 18:15:07 / (U)>> clear
+2021-12-20 18:15:09 / (U)>> / dev
+2021-12-20 18:15:09 / [E]>> Main console : '/'
+2021-12-20 18:15:09 / [E]>> Main console : '/'
+2021-12-20 18:15:28 / (U)>> ? dev

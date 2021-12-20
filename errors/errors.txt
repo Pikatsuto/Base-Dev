@@ -1,0 +1,3 @@
+Start errors file : 2021-12-20 17:52:05
+
+2021-12-20 17:52:05 / [E]>> Help helpCommande : Help file not existe

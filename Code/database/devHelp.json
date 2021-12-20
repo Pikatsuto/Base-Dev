@@ -1,0 +1,105 @@
+{
+    "help":[
+        {
+            "name": "Console.consoleInput",
+            "Utilitis": "Custom input colored, loged and compatible for exit command",
+            "arguments": [
+                "inputText : text for your input (default=False)",
+                "lower : convert lower for all caracter input (default=True)"
+            ]
+        },
+        {
+            "name": "Console.menu",
+            "Utilitis": "Print programe header",
+            "arguments": false
+        },
+        {
+            "name": "Console.clear",
+            "Utilitis": "Clear Terminal",
+            "arguments": false
+        },
+        {
+            "name": "Console.jsonAdd",
+            "Utilitis": "launch questionaire for create json file",
+            "arguments": [
+                "varNameListe is liste of variable name",
+                "messageList is a message liste for variable value input",
+                "prefix is e préfix for message input (All prefix in database/consoleStartMessage)",
+                "varDefautListe is default value liste for varNameListe (default=False)",
+                "path is a path for tour json (default is database)",
+                "name is name for your json questionair (default=False)e",
+                "makeDir is if make (path/name) for your json (default=False)",
+                "header is if start jsont on {\"name\":[]} (default=False)",
+                "nameFile is name for json file (default=False)",
+                "varDefList is if your variable is (str / int / float / bin / hex) default is str (default=False)"
+            ]
+        },
+        {
+            "name": "Console.wget",
+            "Utilitis": "download file",
+            "arguments": [
+                "fileName : File name",
+                "fileLink : Download link"
+            ]
+        },
+        {
+            "name": "Console.deleteDlFolder",
+            "Utilitis": "delete download folder",
+            "arguments": false
+        },
+        {
+            "name": "Console.getMemory",
+            "Utilitis": "return total memory for your PC",
+            "arguments": false
+        },
+        {
+            "name": "Console.startInit",
+            "Utilitis": "default start function on Console file is a clear() and menu()",
+            "arguments": false
+        },
+        {
+            "name": "Help.startInit",
+            "Utilitis": "default start function on Help file, is helping",
+            "arguments": false
+        },
+        {
+            "name": "InstallApps.installExe",
+            "Utilitis": "installing an executable in windows",
+            "arguments": [
+                "fileLink : Download link",
+                "fileName : File name"
+            ]
+        },
+        {
+            "name": "InstallApps.installPythonLibs",
+            "Utilitis": "installing an python libs on Windows and ArchLinux (adaptable for other Linux)",
+            "arguments": [
+                "libs : Librerise have instaling"
+            ]
+        },
+        {
+            "name": "ErrorAndLog.timeGet",
+            "Utilitis": "get time on a string variable",
+            "arguments": [
+                "getType : (\"read\" is chaine non usable for a file name), (\"file\" is chaine usable for a file name)"
+            ]
+        },
+        {
+            "name": "ErrorAndLog.log",
+            "Utilitis": "log gestion function",
+            "arguments": [
+                "output : is a print texte for your log",
+                "ifPrint : is if printing log",
+                "user : is user for your log"
+            ]
+        },
+        {
+            "name": "ErrorAndLog.error",
+            "Utilitis": "error gestion function",
+            "arguments": [
+                "error : is a error printed",
+                "function : is start text after error (generaliti function name)"
+            ]
+        }
+    ]
+}
