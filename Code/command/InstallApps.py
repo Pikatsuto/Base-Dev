@@ -1,5 +1,5 @@
 import os
-from command import ErrorAndLog, Console
+from command import Console, ErrorAndLog
 
 def installExe(fileLink, fileName):
     try:
@@ -12,12 +12,3 @@ def installExe(fileLink, fileName):
     
     except Exception as e:
         return ErrorAndLog.error(e, "InstallApps installJava")
-
-def installPythonLibs(libs):
-    try:
-        if os.name == "posix":
-            os.system(f"python -m pip install {libs}")
-        else:
-            os.system(f"py -m pip install {libs}")
-    except Exception as e:
-        return ErrorAndLog.error(e, "InstallApps installPythonLibs")

@@ -1,13 +1,6 @@
 import os
 
-from command import Console, ErrorAndLog, Help, InstallApps
-
-
-try:
-    from termcolor import colored
-except ModuleNotFoundError:
-    InstallApps.installPythonLibs("termcolor")
-    from termcolor import colored
+from command import Console, ErrorAndLog, Help
 
 def console():
     try:
@@ -49,19 +42,20 @@ def console():
                 arguments = False
 
                 for command in commandListe["allCommand"]:
-                    if command[consoleInputSplit[0]]:
-                        commandSave = command[consoleInputSplit[0]]["command"]
-                        if command[consoleInputSplit[0]]["arguments"]:
-                            if command[consoleInputSplit[0]]["arguments"]["default"]:
-                                arguments = command[consoleInputSplit[0]]["arguments"]["default"]
-                                break
-                            else:
-                                for argumentsInput in argumentsListe:
-                                    if argumentsInput in command[consoleInputSplit[0]]["arguments"]:
-                                        arguments = command[consoleInputSplit[0]]["arguments"][argumentsInput]
-                                        break
+                    if consoleInputSplit[0] in command:
+                        if command[consoleInputSplit[0]]:
+                            commandSave = command[consoleInputSplit[0]]["command"]
+                            if command[consoleInputSplit[0]]["arguments"]:
+                                if command[consoleInputSplit[0]]["arguments"]["default"]:
+                                    arguments = command[consoleInputSplit[0]]["arguments"]["default"]
+                                    break
+                                else:
+                                    for argumentsInput in argumentsListe:
+                                        if argumentsInput in command[consoleInputSplit[0]]["arguments"]:
+                                            arguments = command[consoleInputSplit[0]]["arguments"][argumentsInput]
+                                            break
 
-                if commandSave and arguments:
+                if commandSave and arguments: #Execute fonction for command
                     commandSave(arguments)
 
                 elif commandSave:

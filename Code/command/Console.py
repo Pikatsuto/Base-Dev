@@ -1,7 +1,16 @@
-import os, json, requests, shutil, sys, subprocess
-from termcolor import colored
+import os, json, shutil, sys, subprocess
 
 from command import ErrorAndLog
+
+try:
+    from termcolor import colored
+except ModuleNotFoundError:
+    ErrorAndLog.installPythonLibs("termcolor")
+
+try:
+    import requests
+except ModuleNotFoundError:
+    ErrorAndLog.installPythonLibs("requests")
 
 
 with open("database/consoleStartMessage.json") as file:# console start ligne
@@ -19,8 +28,10 @@ def consoleInput(inputText=False, lower=True):#console Input
             consoleInput.lower()
 
         if consoleInput == "exit":
-            print("Restart not show ? -> CTRL-C or shutdown command for your bot")
-            exit(0)
+            ErrorAndLog.exitcommand()
+
+        if consoleInput == "restart":
+            ErrorAndLog.restart()
 
         elif consoleInput != "":
             ErrorAndLog.log(consoleInput, False, "user")

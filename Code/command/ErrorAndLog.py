@@ -1,6 +1,22 @@
 import os, shutil, json
 from time import strftime
-from termcolor import colored
+
+def restart():
+    os.mkdir("database/restart")
+    exit(0)
+
+def exitcommand():
+    print("Restart not show ? -> CTRL-C or shutdown command for your bot")
+    exit(0)
+
+def installPythonLibs(libs):
+    os.system(f".env/bin/python -m pip install {libs}")
+    restart()
+
+try:
+    from termcolor import colored
+except ModuleNotFoundError:
+    installPythonLibs("termcolor")
 
 def timeGet(getType):# get time for easy read and name file compatible
     timeRead = strftime("%Y-%m-%d %H:%M:%S")

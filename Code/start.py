@@ -1,16 +1,20 @@
-import os
-from sys import platform
+import os, shutil
 
-from command import Console, ErrorAndLog
+from command import ErrorAndLog, Console
+from termcolor import colored
 
-try:
-    from termcolor import colored
-except ModuleNotFoundError:
-    if platform in ["linux", "linux2"]:
-        os.system("python -m pip install termcolor")
-    elif platform == "win32":
-        os.system("py -m pip install termcolor")
-    from termcolor import colored
+
+def checkEnv():
+    try:
+        if not os.path.exists(".env"):
+            if os.name == "posix":
+                os.system("python3 -m venv .env")
+            else:
+                os.system("py -m venv .env")
+            os.system(".env/bin/python -m pip install --upgrade pip")
+
+    except Exception as e:
+        return ErrorAndLog.error(e, "StartPrograme checkEnv")
 
 
 def checkAndInstall():
@@ -28,14 +32,12 @@ def checkAndInstall():
 def startAndRestart():
     try:
         while True:
-            if platform in ["linux", "linux2"]:
-                os.system("python main.py")
-            elif platform == "win32":
-                os.system("py main.py")
-            ifRestart = input("Restart {} ? {} {}>> ".format(colored("PikaUtils", "yellow"), colored("[N for no]", "cyan"), colored("(U)", "green")))
-            if ifRestart == "n":
-                Console.clear()
+            os.system(".env/bin/python main.py")
+            
+            if not os.path.exists("database/restart"):
                 break
+            else:
+                shutil.rmtree("database/restart")
         
     except Exception as e:
         return ErrorAndLog.error(e, "StartPrograme startAndRestart")
@@ -43,6 +45,7 @@ def startAndRestart():
 
 def startInit():
     try:
+        checkEnv()
         checkAndInstall()
         startAndRestart()
 
