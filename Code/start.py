@@ -1,7 +1,5 @@
 import os, shutil
-
-from command import ErrorAndLog, Console
-from termcolor import colored
+from command import ErrorAndLog
 
 
 def checkEnv():
