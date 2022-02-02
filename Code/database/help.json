@@ -6,6 +6,16 @@
             "arguments": false
         },
         {
+            "name": "exit",
+            "Utilitis": "Exit program",
+            "arguments": false
+        },
+        {
+            "name": "restart",
+            "Utilitis": "Restart program",
+            "arguments": false
+        },
+        {
             "name": "? dev",
             "Utilitis": "Helping for dev",
             "arguments": false

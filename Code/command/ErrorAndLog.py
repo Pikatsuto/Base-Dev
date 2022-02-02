@@ -1,16 +1,28 @@
 import os, shutil, json
 from time import strftime
 
+def python(arg):
+    if os.name == "posix":
+        os.system(f".env/bin/python {arg}")
+    else:
+        os.system(f".env\\Scripts\\python.exe {arg}")
+
+def pythonSys(arg):
+    if os.name == "posix":
+        os.system(f"python3 {arg}")
+    else:
+        os.system(f"py {arg}")
+
 def restart():
     os.mkdir("database/restart")
     exit(0)
 
 def exitcommand():
-    print("Restart not show ? -> CTRL-C or shutdown command for your bot")
+    print("Programe not exit ? -> CTRL-C\n")
     exit(0)
 
-def installPythonLibs(libs):
-    os.system(f".env/bin/python -m pip install {libs}")
+def installPythonLibs(lib):
+    python(f"-m pip install {lib}")
     restart()
 
 try:

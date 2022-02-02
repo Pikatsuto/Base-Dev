@@ -5,11 +5,8 @@ from command import ErrorAndLog
 def checkEnv():
     try:
         if not os.path.exists(".env"):
-            if os.name == "posix":
-                os.system("python3 -m venv .env")
-            else:
-                os.system("py -m venv .env")
-            os.system(".env/bin/python -m pip install --upgrade pip")
+            ErrorAndLog.pythonSys("-m venv .env")
+            ErrorAndLog.python("-m pip install --upgrade pip")
 
     except Exception as e:
         return ErrorAndLog.error(e, "StartPrograme checkEnv")
@@ -30,7 +27,7 @@ def checkAndInstall():
 def startAndRestart():
     try:
         while True:
-            os.system(".env/bin/python main.py")
+            ErrorAndLog.python("main.py")
             
             if not os.path.exists("database/restart"):
                 break
