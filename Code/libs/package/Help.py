@@ -1,7 +1,8 @@
 import json, os
 from termcolor import colored
 
-from command import Console, ErrorAndLog
+from libs.package import Console
+from libs.package import ErrorAndLog
 
 
 def startInit(devMode=False):

@@ -1,6 +1,7 @@
 import os
 
-from command import Console, ErrorAndLog, Help
+from libs.package import Console, Help
+from libs.package import ErrorAndLog
 
 def console():
     try:

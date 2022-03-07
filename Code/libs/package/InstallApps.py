@@ -1,5 +1,6 @@
 import os
-from command import Console, ErrorAndLog
+from libs.package import Console
+from libs.package import ErrorAndLog
 
 def installExe(fileLink, fileName):
     try:

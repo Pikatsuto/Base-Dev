@@ -1,0 +1,5 @@
+Start logs file : 2022-02-02 16:26:35
+
+2022-02-02 16:26:35 / (U)>> ?
+2022-02-02 18:41:27 / [E]>> StartPrograme startInit : consoleInput() got an unexpected keyword argument 'autoWrite'
+2022-02-02 18:41:27 / [E]>> StartPrograme startInit : consoleInput() got an unexpected keyword argument 'autoWrite'

@@ -1,6 +1,6 @@
 import os, shutil
-from command import ErrorAndLog
-
+from libs.package import ErrorAndLog
+from libs.package.Console import consoleInput
 
 def checkEnv():
     try:

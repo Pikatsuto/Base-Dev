@@ -71,7 +71,7 @@
             ]
         },
         {
-            "name": "InstallApps.installPythonLibs",
+            "name": "ErrorAndLog.installPythonLibs",
             "Utilitis": "installing an python libs on Windows and ArchLinux (adaptable for other Linux)",
             "arguments": [
                 "libs : Librerise have instaling"
@@ -83,6 +83,30 @@
             "arguments": [
                 "getType : (\"read\" is chaine non usable for a file name), (\"file\" is chaine usable for a file name)"
             ]
+        },
+        {
+            "name": "ErrorAndLog.sython",
+            "Utilitis": "Start python command in .env",
+            "arguments": [
+                "command : Your python command"
+            ]
+        },
+        {
+            "name": "ErrorAndLog.pythonSys",
+            "Utilitis": "Start python command in your system",
+            "arguments": [
+                "command : Your python command"
+            ]
+        },
+        {
+            "name": "ErrorAndLog.exitCommand",
+            "Utilitis": "exit programe",
+            "arguments": false
+        },
+        {
+            "name": "ErrorAndLog.restart",
+            "Utilitis": "restart programe",
+            "arguments": false
         },
         {
             "name": "ErrorAndLog.log",

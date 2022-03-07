@@ -1,6 +1,6 @@
 import os, json, shutil, sys, subprocess
 
-from command import ErrorAndLog
+from libs.package import ErrorAndLog
 
 try:
     from termcolor import colored
@@ -13,11 +13,11 @@ except ModuleNotFoundError:
     ErrorAndLog.installPythonLibs("requests")
 
 
-with open("database/consoleStartMessage.json") as file:# console start ligne
+with open("database/consoleStartMessage.json") as file:
     consoleStartMessage = json.load(file)
 
 
-def consoleInput(inputText=False, lower=True):#console Input
+def consoleInput(inputText=False, lower=True):
     try:
         if not inputText:
             consoleInput = input("{}>> ".format(colored(consoleStartMessage["user"], "green")))

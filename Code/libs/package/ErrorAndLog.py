@@ -1,17 +1,17 @@
 import os, shutil, json
 from time import strftime
 
-def python(arg):
+def python(command):
     if os.name == "posix":
-        os.system(f".env/bin/python {arg}")
+        os.system(f".env/bin/python {command}")
     else:
-        os.system(f".env\\Scripts\\python.exe {arg}")
+        os.system(f".env\\Scripts\\python.exe {command}")
 
-def pythonSys(arg):
+def pythonSys(command):
     if os.name == "posix":
-        os.system(f"python3 {arg}")
+        os.system(f"python3 {command}")
     else:
-        os.system(f"py {arg}")
+        os.system(f"py {command}")
 
 def restart():
     os.mkdir("database/restart")
@@ -116,6 +116,14 @@ def error(error, function):#send and save errors
             timeForLastError = errorsNumberJson["timeForLastError"]
             readErrorMessage = errorsNumberJson["readErrorMessage"]
     else:
+        errorsNumberJson = {
+            "errorsNumber": None,
+            "timeForLastError": None,
+            "readErrorMessage": None
+        }
+        with open("errors/errorsPerSecond.json", "w+") as file:
+            json.dump(errorsNumberJson, file)
+
         errorsNumber = 0
         timeForLastError = ""
 
