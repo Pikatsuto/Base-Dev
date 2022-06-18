@@ -1,266 +1,201 @@
-import os, json, shutil, sys, subprocess
+import json
+import os
+import shutil
+import subprocess
+import sys
 
 from libs.package import ErrorAndLog
 
+fileName = "Console"
+
 try:
     from termcolor import colored
+
+    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check termcolor libs")
 except ModuleNotFoundError:
-    ErrorAndLog.installPythonLibs("termcolor")
+    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check install libs")
+    ErrorAndLog.install_python_libs("termcolor")
 
 try:
     import requests
-except ModuleNotFoundError:
-    ErrorAndLog.installPythonLibs("requests")
 
+    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
+except ModuleNotFoundError:
+    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
+    ErrorAndLog.install_python_libs("requests")
 
 with open("database/consoleStartMessage.json") as file:
     consoleStartMessage = json.load(file)
 
 
-def consoleInput(inputText=False, lower=True):
+def console_input_handler(input_text=False, lower=True):
+    function_name = "consoleInput"
+
     try:
-        if not inputText:
-            consoleInput = input("{}>> ".format(colored(consoleStartMessage["user"], "green")))
+        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
+        if not input_text:
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If not input text")
+            console_input = input(f'{colored(consoleStartMessage["user"], "green")}>> ')
         else:
-            consoleInput = input("{} / {}>> ".format(colored(inputText, "cyan"), colored(consoleStartMessage["user"], "green")))
-        
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If input text")
+            console_input = input(
+                f'{colored(input_text, "cyan")} / {colored(consoleStartMessage["user"], "green")}>> '
+            )
+
         if lower:
-            consoleInput.lower()
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If lower")
+            console_input.lower()
 
-        if consoleInput == "exit":
-            ErrorAndLog.exitcommand()
+        if console_input == "exit":
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If exit")
+            ErrorAndLog.exit_command()
 
-        if consoleInput == "restart":
+        if console_input == "restart":
+            ErrorAndLog.debug_test(
+                function=function_name, my_file=fileName, number=1, condition="If restart"
+            )
             ErrorAndLog.restart()
 
-        elif consoleInput != "":
-            ErrorAndLog.log(consoleInput, False, "user")
+        elif console_input != "":
+            ErrorAndLog.debug_test(
+                function=function_name, my_file=fileName, number=1, condition="If console input is void"
+            )
+            ErrorAndLog.log_handler(console_input, False, "user")
 
-        return consoleInput
+        return console_input
 
     except Exception as e:
-        return ErrorAndLog.error(e, "Console consoleInput")
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
 
 
-def menu():#show start menu
+def motd():  # show start menu
+    function_name = "motd"
+
     try:
-        print(colored("▀█████████▄     ▄████████    ▄████████    ▄████████           ████████▄     ▄████████ ▄█      █▄ ", "yellow"))
-        print(colored("  ███    ███   ███    ███   ███    ███   ███    ███           ███   ▀███   ███    ███ ██      ██ ", "yellow"))
-        print(colored("  ███    ███   ███    ███   ███    █▀    ███    █▀            ███    ███   ███    █▀  ███    ███ ", "yellow"))
-        print(colored(" ▄███▄▄▄██▀    ███    ███   ███         ▄███▄▄▄     ▄███████▄ ███    ███  ▄███▄▄▄     ▀██    ██▀ ", "yellow"))
-        print(colored("▀▀███▀▀▀██▄  ▀███████████ ▀███████████ ▀▀███▀▀▀     ▀███████▀ ███    ███ ▀▀███▀▀▀      ██    ██  ", "yellow"))
-        print(colored("  ███    ██▄   ███    ███          ███   ███    █▄            ███    ███   ███    █▄   ███  ███  ", "yellow"))
-        print(colored("  ███    ███   ███    ███    ▄█    ███   ███    ███           ███   ▄███   ███    ███   ██  ██   ", "yellow"))
-        print(colored("▄█████████▀    ███    █▀   ▄████████▀    ████████▀            ████████▀    ████████▀    ▀████▀   ", "yellow"))
-        print(colored("_________________________________________________________________________________________________", "green")) 
+        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Print MOTD")
+
+        print(colored("# --------------------------------------------------------------------------- #", "green"))
+        print()
+        print("   888888b.                                     8888888b.")
+        print("   888  \"88b                                    888  \"Y88b")
+        print("   888  .88P                                    888    888")
+        print("   8888888K.   8888b.  .d8888b   .d88b.         888    888  .d88b.  888  888")
+        print("   888  \"Y88b     \"88b 88K      d8P  Y8b        888    888 d8P  Y8b 888  888")
+        print("   888    888 .d888888 \"Y8888b. 88888888        888    888 88888888 Y88  88P")
+        print("   888   d88P 888  888      X88 Y8b.            888  .d88P Y8b.      Y8bd8P")
+        print("   8888888P\"  \"Y888888  88888P'  \"Y8888         8888888P\"   \"Y8888    Y88P")
+        print()
+        print("                                  By Pikatsuto")
+        print(colored("# --------------------------------------------------------------------------- #", "green"))
         print(colored("\nWelcome", "green"), "for Base Dev shell", colored("\n[?]", "cyan"), "For Help commande\n")
 
     except Exception as e:
-        return ErrorAndLog.error(e, "Console menu")
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
 
 
-def clear():#use clear commande
+def clear():  # use clear commande
+    function_name = "clear"
+
     try:
+        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
         if os.name == "posix":
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Linux")
             os.system("clear")
         else:
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Wine")
             os.system("cls")
 
     except Exception as e:
-        return ErrorAndLog.error(e, 'Console clear')
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
 
-# varNameListe is liste of variable name
-# messageList is a message liste for variable value input
-# prefix is e préfix for message input (All prefix in database/consoleStartMessage)
-# varDefautListe is default value liste for varNameListe
-# path is a path for tour json (default is database)
-# name is name for your json questionaire
-# makeDir is if make (path/name) for your json
-# header is if start jsont on {"name":[]}
-# nameFile is name for json file
-# varDefList is if your variable is (str / int / float / bin / hex) default is str
-def jsonAdd(varNameList, messageList, prefix, varDefautList=False, path="database", name=False, makeDir=False, header=False, nameFile=False, varDefList=False):
+
+def wget(file_name, file_link):
+    function_name = "wget"
+
     try:
-        resetInfo = False
-        while True:
-            jsonInfoPrintList = []
-            if not name or resetInfo:
-                name = ""
-                while name == "":
-                    clear()
-                    print(f"{prefix}\n")
-                    name = consoleInput("Enter name", lower=False)
-                    if name != "":
-                        jsonInfoPrintList.append("{}: {}".format(colored(f"{prefix} name", "blue"), colored(name, "green", attrs=["dark"])))
-
-            if not nameFile:
-                nameFile = name
-
-            if os.path.exists(f"{path}/{nameFile}.json"):
-                with open(f"{path}/{nameFile}.json", "r") as file:
-                    jsonInfo = json.load(file)
-            
-            elif header:
-                jsonInfo = {
-                    f"{name}":[
-
-                    ]
-                }
-                
-            else:
-                jsonInfo = {
-                    f"name": f"{name}"
-                }
-            
-            clockCount = 0
-            for varName in varNameList:
-                varInput = ""
-                varDefautSave = False
-                varDefSave = False
-
-                if varDefautList:
-                    for varDefaut in varDefautList:
-                        if varDefaut[0] == clockCount:
-                            varDefautSave = varDefaut[1]
-
-                if varDefList:
-                    for varDef in varDefList:
-                        if varDef[0] == clockCount:
-                            varDefSave = varDef[1]
-
-                while varInput == "":
-                    clear()
-                    print(f"{prefix}\n")
-                    if jsonInfoPrintList != []:
-                        for jsonInfoPrint in jsonInfoPrintList:
-                            print(jsonInfoPrint)
-
-                    if varInput == "":
-                        varInput = consoleInput("{} {}".format(prefix, messageList[clockCount]), lower=False)
-
-                    if varInput == "" and varDefautSave != False:
-                        varInput = varDefautSave
-                    
-                    else:
-                        try:
-                            if varDefSave != False:
-                                if varDefSave == "int":
-                                    varInput = int(varInput)
-                                if varDefSave == "hex":
-                                    varInput = hex(int(varInput, 16))
-                                if varDefSave == "bin":
-                                    varInput = bin(int(varInput, 2))
-                        except (ValueError, TypeError):
-                            varInput = ""
-
-                    if varInput != "":
-                        jsonInfoPrintList.append("{}: {}".format(colored(f"{prefix} {varName}", "blue"), colored(varInput, "green", attrs=["dark"])))
-
-                        jsonInfoAppend = {
-                            f"{varName}": varInput
-                        }
-                        if header:
-                            if clockCount >= 1:
-                                jsonInfo[f"{name}"][0].update(jsonInfoAppend)
-                            else:
-                                jsonInfo[f"{name}"].append(jsonInfoAppend)
-                        else:
-                            jsonInfo.update(jsonInfoAppend)
-
-
-                clockCount += 1
-        
-            checkInfo = None
-            while checkInfo not in ["y", "n", ""]:
-                clear()
-
-                print(f"{prefix}\n")
-                for jsonInfoPrint in jsonInfoPrintList:
-                    print(jsonInfoPrint)
-
-                checkInfo = consoleInput("this info is good ? [Y/n]")
-                if checkInfo == "y" or checkInfo == "":
-                    if makeDir:
-                        path = f"{path}/{name}"
-                        if not os.path.exists(path):
-                            os.makedirs(path)
-
-                    with open(f"{path}/{nameFile}.json", "w+") as file:
-                        json.dump(jsonInfo, file)
-                    
-                    return jsonInfo
-                elif checkInfo == "n":
-                    resetInfo = True
-            
-    
-    except Exception as e:
-        return ErrorAndLog.error(e, 'Console jsonAdd')
-
-
-
-def wget(fileName, fileLink):
-    try:
+        ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=0, condition="Initial While Wget")
         if os.path.exists("database/dl"):
+            ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=1,
+                                   condition="Initial if download file exist")
             shutil.rmtree("database/dl")
         os.mkdir("database/dl")
 
-        fileName = (f"database/dl/{fileName}")
-        with open(fileName, "wb") as f:
-            print("Downloading %s" % fileName)
-            response = requests.get(fileLink, stream=True)
-            totalLength = response.headers.get('content-length')
+        file_name = f"database/dl/{file_name}"
+        with open(file_name, "wb") as f:
+            ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=1, condition="Open download file")
+            print(f"Downloading {file_name}")
+            response = requests.get(file_link, stream=True)
+            total_length = response.headers.get('content-length')
 
-            if totalLength is None:
+            if total_length is None:
+                ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=2,
+                                       condition="if Length of file si void")
                 f.write(response.content)
             else:
+                ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=2,
+                                       condition="if Length of file is defined")
                 dl = 0
-                totalLength = int(totalLength)
+                total_length = int(total_length)
                 for data in response.iter_content(chunk_size=4096):
+                    ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=3,
+                                           condition="for write data fin file")
                     dl += len(data)
                     f.write(data)
-                    done = int(50 * dl / totalLength)
-                    sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )    
+                    done = int(50 * dl / total_length)
+                    sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50 - done)))
                     sys.stdout.flush()
-        
-        return fileName
+
+        return file_name
 
     except Exception as e:
-        return ErrorAndLog.error(e, 'Console wget')
+        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
 
 
-def deleteDlFolder():
+def delete_dl_folder():
+    function_name = "deleteDlFolder"
+
     try:
         if os.path.exists("database/dl"):
+            ErrorAndLog.debug_test(
+                function=function_name, my_file=fileName, number=0, condition="if download folder exist"
+            )
             shutil.rmtree("database/dl")
-    
-    except Exception as e: 
-        return ErrorAndLog.error(e, "nstallApps deleteDlFolder")
 
-def getMemory():
+    except Exception as e:
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+
+
+def get_memory():
+    function_name = "getMemory"
+
     try:
+        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
         if os.name == "posix":
-            totalMemory, usedMemory, freeMemory = map(
-            int, os.popen('free -t -m').readlines()[-1].split()[1:])
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="if on Linux")
+            total_memory, used_memory, free_memory = map(
+                int, os.popen('free -t -m').readlines()[-1].split()[1:])
 
         else:
-            memoryInfo = subprocess.getoutput("wmic MemoryChip get /format:list")
-            memoryInfo = memoryInfo.split("\n")
-            
-            totalMemory = 0
-            for line in memoryInfo:
-                if line.startswith("Capacity="):
-                    totalMemory += int(int(line.split("Capacity=")[-1]) / 1073741824)
-            
-        return totalMemory
+            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="if on Windows")
+            memory_info = subprocess.getoutput("wmic MemoryChip get /format:list")
+            memory_info = memory_info.split("\n")
+
+            total_memory = sum(
+                int(line.split("Capacity=")[-1]) // 1073741824 for line in memory_info if line.startswith("Capacity="))
+
+        return total_memory
 
     except Exception as e:
-        return ErrorAndLog.error(e, 'Console getMemory')
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
 
 
-def startInit():#on start clear and shows menu
+def start_init():  # on start clear and shows menu
+    function_name = "startInit"
+
     try:
+        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial while")
         clear()
-        menu()
+        motd()
 
     except Exception as e:
-        return ErrorAndLog.error(e, 'Console startInit')
+        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")

@@ -1,3 +1,24 @@
 Start errors file : 2022-02-02 18:41:27
 
 2022-02-02 18:41:27 / [E]>> StartPrograme startInit : consoleInput() got an unexpected keyword argument 'autoWrite'
+2022-03-21 21:01:53 / [E]>> Main console : type object 'Info' has no attribute 'debugMude'
+2022-03-21 21:05:29 / [E]>> Main console : 'default'
+2022-03-21 21:05:39 / [E]>> Main console : 'default'
+2022-03-21 21:07:17 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-03-21 21:07:36 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-03-21 21:08:22 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-03-21 21:13:24 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-03-21 21:15:42 / [E]>> Main console : clear() takes 0 positional arguments but 1 was given
+2022-03-21 21:18:58 / [E]>> Main console : local variable 'argumentsOk' referenced before assignment
+2022-03-21 21:21:46 / [E]>> Main console : local variable 'argumentsInput' referenced before assignment
+2022-03-21 21:23:45 / [E]>> Main console : list index out of range
+2022-03-21 21:25:49 / [E]>> Main console : list assignment index out of range
+2022-03-21 21:26:23 / [E]>> Main console : list assignment index out of range
+2022-03-21 22:34:32 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-03-24 09:21:28 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-05-03 21:37:34 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-05-03 22:07:47 / [E]>> Main console : debugMode() missing 1 required positional argument: 'debugMode'
+2022-06-16 14:29:08 / [E]>> Main startAndRestart : module 'libs.package.ErrorAndLog' has no attribute 'python'
+2022-06-18 23:22:23 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:22:37 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:25:15 / [E]>> Main console : 'function' object has no attribute 'split'

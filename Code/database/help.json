@@ -2,22 +2,22 @@
     "help":[
         {
             "name": "clear",
-            "Utilitis": "Clear Terminal",
+            "Utilities": "Clear Terminal",
             "arguments": false
         },
         {
             "name": "exit",
-            "Utilitis": "Exit program",
+            "Utilities": "Exit program",
             "arguments": false
         },
         {
             "name": "restart",
-            "Utilitis": "Restart program",
+            "Utilities": "Restart program",
             "arguments": false
         },
         {
             "name": "? dev",
-            "Utilitis": "Helping for dev",
+            "Utilities": "Helping for dev",
             "arguments": false
         }
     ]

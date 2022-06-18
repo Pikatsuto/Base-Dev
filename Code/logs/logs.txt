@@ -1,5 +1,35 @@
-Start logs file : 2022-02-02 16:26:35
 
-2022-02-02 16:26:35 / (U)>> ?
-2022-02-02 18:41:27 / [E]>> StartPrograme startInit : consoleInput() got an unexpected keyword argument 'autoWrite'
-2022-02-02 18:41:27 / [E]>> StartPrograme startInit : consoleInput() got an unexpected keyword argument 'autoWrite'
+2022-06-17 22:52:21 / (U)>> ?
+2022-06-17 22:52:29 / (U)>> ? dev
+2022-06-17 22:54:08 / (U)>> *debug o
+2022-06-17 22:54:08 / [L]>> command "*debug o" no fund
+2022-06-17 22:54:14 / (U)>> debug o
+2022-06-17 22:54:20 / (U)>> debug o
+2022-06-18 17:48:59 / (U)>> ?
+2022-06-18 17:49:06 / (U)>> / dev
+2022-06-18 17:49:06 / [L]>> command "/ dev" no fund
+2022-06-18 17:49:09 / (U)>> ? dev
+2022-06-18 17:53:02 / (U)>> debug o
+2022-06-18 17:53:06 / (U)>> debug o
+2022-06-18 17:54:34 / (U)>> clear
+2022-06-18 23:22:23 / (U)>> ?
+2022-06-18 23:22:23 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:22:23 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:22:37 / (U)>> clear
+2022-06-18 23:22:37 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:22:37 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:25:15 / (U)>> *?
+2022-06-18 23:25:15 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:25:15 / [E]>> Main console : 'function' object has no attribute 'split'
+2022-06-18 23:26:41 / (U)>> ?
+2022-06-18 23:26:52 / (U)>> restart
+2022-06-18 23:26:52 / [L]>> command "restart" no fund
+2022-06-18 23:26:55 / (U)>> ?
+2022-06-18 23:27:01 / (U)>> restart
+2022-06-18 23:27:01 / [L]>> command "restart" no fund
+2022-06-18 23:27:04 / (U)>> ?
+2022-06-18 23:27:07 / (U)>> exit
+2022-06-18 23:27:07 / [L]>> command "exit" no fund
+2022-06-18 23:28:44 / (U)>> ?
+2022-06-18 23:28:49 / (U)>> exi
+2022-06-18 23:28:49 / [L]>> command "exi" no fund

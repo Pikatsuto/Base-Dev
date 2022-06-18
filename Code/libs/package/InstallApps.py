@@ -2,14 +2,21 @@ import os
 from libs.package import Console
 from libs.package import ErrorAndLog
 
-def installExe(fileLink, fileName):
+fileName = "InstallApps"
+
+
+def install_exe(file_link, file_name):
+    functionName = "installExe"
+
     try:
-        if os.name != "posix":            
-            filePath = Console.wget(fileLink=fileLink, fileName=fileName).replace("/", "\\")
+        ErrorAndLog.debug_test(function=functionName, my_file=file_name, number=0, condition="Initial while")
+        if os.name != "posix":
+            ErrorAndLog.debug_test(function=functionName, my_file=file_name, number=1, condition="If in Windows")
+            filePath = Console.wget(file_link=file_link, file_name=file_name).replace("/", "\\")
             os.system(filePath)
             Console.clear()
 
-            Console.deleteDlFolder()
-    
+            Console.delete_dl_folder()
+
     except Exception as e:
-        return ErrorAndLog.error(e, "InstallApps installJava")
+        return ErrorAndLog.error_handler(e, f"{file_name} {functionName}")
