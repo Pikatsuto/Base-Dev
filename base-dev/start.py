@@ -26,7 +26,9 @@ def check_and_install():
             os.makedirs("database")
 
         if not os.path.exists("libs"):
-            return error_and_log.error_handler("[FATAL] Command folder missing", "StartProgram CheckAndInstall")
+            return error_and_log.error_handler(
+                "[FATAL] Command folder missing", "StartProgram CheckAndInstall"
+            )
 
     except Exception as e:
         return error_and_log.error_handler(e, f"{file_name} {function_name}")

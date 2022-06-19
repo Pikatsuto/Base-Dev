@@ -68,11 +68,13 @@ def debug_test(function: str, my_file: str, number: int, condition: str = ""):
         if condition:
             print(
                 f'{colored(consoleStartMessage["console"], "yellow")}'
-                f'>> {my_file} {function} Test: {number} OK / Condition: {condition}'
+                f">> {my_file} {function} Test: {number} OK / Condition: {condition}"
             )
 
         else:
-            print(f'{colored(consoleStartMessage["console"], "yellow")}>> {my_file} {function} Test: {number} OK')
+            print(
+                f'{colored(consoleStartMessage["console"], "yellow")}>> {my_file} {function} Test: {number} OK'
+            )
 
 
 def log_handler(output, if_print, user):  # send and save logs
@@ -114,7 +116,9 @@ def log_handler(output, if_print, user):  # send and save logs
             os.makedirs("logs/old")
 
         with open("logs/logs.txt", "w+") as f:
-            f.write(f"{logs_file}\n{time_read} / {log_message_text}\n\nEnd logs file : {time_read}")
+            f.write(
+                f"{logs_file}\n{time_read} / {log_message_text}\n\nEnd logs file : {time_read}"
+            )
 
         shutil.move("logs/logs.txt", f"logs/old/logs_end_{time_file}.txt")
 
@@ -132,14 +136,18 @@ def error_handler(error, function):  # send and save errors
     time_read = time_get("read")
     time_file = time_get("file")
 
-    error_message = f'{colored(consoleStartMessage["error"], "red")}>> {function} : {error}'
+    error_message = (
+        f'{colored(consoleStartMessage["error"], "red")}>> {function} : {error}'
+    )
     error_message_text = f'{consoleStartMessage["error"]}>> {function} : {error}'
     log_error_message = f"{function} : {error}"
 
     if not os.path.exists("errors"):
         os.makedirs("errors")
 
-    if os.path.exists("errors/errorsPerSecond.json"):  # read file of count error in one second
+    if os.path.exists(
+        "errors/errorsPerSecond.json"
+    ):  # read file of count error in one second
         with open("errors/errorsPerSecond.json", "r+") as f:
             errors_number_json = json.load(f)
             errors_number = errors_number_json["errors_number"]
@@ -149,7 +157,7 @@ def error_handler(error, function):  # send and save errors
         errors_number_json = {
             "errors_number": None,
             "time_for_last_error": None,
-            "read_error_message": None
+            "read_error_message": None,
         }
         with open("errors/errorsPerSecond.json", "w+") as f:
             json.dump(errors_number_json, f)
@@ -159,7 +167,11 @@ def error_handler(error, function):  # send and save errors
 
     errors_number += 1
 
-    if errors_number >= 5 and time_for_last_error == time_file and read_error_message == error_message:  # stop program if 5
+    if (
+        errors_number >= 5
+        and time_for_last_error == time_file
+        and read_error_message == error_message
+    ):  # stop program if 5
         # repetitive error
         errors_number = 0
         error_message = f'{colored(consoleStartMessage["error"], "red")}>> [FATAL] {function} : {error}'
@@ -172,10 +184,12 @@ def error_handler(error, function):  # send and save errors
     errors_number_json = {
         "errors_number": errors_number,
         "time_for_last_error": time_file,
-        "read_error_message": error_message
+        "read_error_message": error_message,
     }
 
-    with open("errors/errorsPerSecond.json", "w+") as f:  # right file error in one second
+    with open(
+        "errors/errorsPerSecond.json", "w+"
+    ) as f:  # right file error in one second
         json.dump(errors_number_json, f)
 
     log_handler(log_error_message, False, "error")
@@ -200,13 +214,17 @@ def error_handler(error, function):  # send and save errors
             os.makedirs("errors/old")
 
         with open("errors/errors.txt", "w+") as f:
-            f.write(f"{errors_file}\n{time_read} / {error_message_text}\n\nEnd errors file : {time_read}")
+            f.write(
+                f"{errors_file}\n{time_read} / {error_message_text}\n\nEnd errors file : {time_read}"
+            )
 
         shutil.move("errors/errors.txt", f"errors/old/errors_end_{time_file}.txt")
 
         old_errors_files = os.listdir("errors/old")
         if len(old_errors_files) >= 10:
-            shutil.make_archive(f"errors/oldZip/errors_end_{time_file}", "zip", "errors/old")
+            shutil.make_archive(
+                f"errors/oldZip/errors_end_{time_file}", "zip", "errors/old"
+            )
             shutil.rmtree("errors/old")
 
     if fatal:

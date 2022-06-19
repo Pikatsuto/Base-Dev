@@ -9,10 +9,16 @@ def install_exe(file_link, file_name):
     func = "installExe"
 
     try:
-        error_and_log.debug_test(function=func, my_file=file_name, number=0, condition="Initial while")
+        error_and_log.debug_test(
+            function=func, my_file=file_name, number=0, condition="Initial while"
+        )
         if os.name != "posix":
-            error_and_log.debug_test(function=func, my_file=file_name, number=1, condition="If in Windows")
-            file_path = console.wget(file_link=file_link, file_name=file_name).replace("/", "\\")
+            error_and_log.debug_test(
+                function=func, my_file=file_name, number=1, condition="If in Windows"
+            )
+            file_path = console.wget(file_link=file_link, file_name=file_name).replace(
+                "/", "\\"
+            )
             os.system(file_path)
             console.clear()
 
