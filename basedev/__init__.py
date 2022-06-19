@@ -1,10 +1,11 @@
 """The Base-dev package."""
-from .__main__ import start_init
+from .__main__ import main
+
+from .command import command, CommandGroup
 
 
-class CommandGroup:
-    pass
-
-load_plugin = lambda *_: ...
-
-__all__ = (CommandGroup, start_init, load_plugin)
+__all__ = (
+    'main',
+    'command',
+    'CommandGroup'
+)

@@ -1,22 +1,23 @@
-from basedev import load_plugin, start_init, CommandGroup
+from basedev import command, CommandGroup, __main__
 
 
 class Demo(CommandGroup):
     """
     This is a command group for demonstration purposes.
     """
+    def __init__(self):
+        super().__init__()
+        self.a = 5894958938
 
-    @staticmethod
-    def work(bar=False):
+    @command('demo')
+    def work(self):
         """
         A work command that shows things are working!
-
-        :param bar: False or True
-            A bar argument that shows if set to True
-            Default: False
         """
-        print('work', '(bar)' * bar)
+        print(self.a)
+        print('work')
 
 
-load_plugin(Demo)
-start_init()
+if __name__ == '__main__':
+    demo = Demo()
+    __main__.main()
