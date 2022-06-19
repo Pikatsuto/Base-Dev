@@ -9,6 +9,7 @@ $(VENV):
 	chmod +x $(VBIN)/activate
 	./$(VBIN)/activate
 	$(VBIN)/pip install -r requirements.txt
+	$(VBIN)/pip install -e .
 
 start: $(VENV)
 	@echo "Starting base-dev"
@@ -17,5 +18,6 @@ start: $(VENV)
 clean:
 	rm -rf venv
 	rm -rf base-dev/logs/.txt base-dev/errors/*.txt
+	rm -rf *.-egg-info
 
 .PHONY: all start clean
