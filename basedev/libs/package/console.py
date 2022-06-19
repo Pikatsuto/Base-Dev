@@ -12,8 +12,12 @@ from basedev.libs.package import error_and_log
 fileName = "console"
 
 
-with open("database/consoleStartMessage.json") as file:
-    consoleStartMessage = json.load(file)
+consoleStartMessage = {
+    "user": "(U)",
+    "console": "[@]",
+    "log": "[L]",
+    "error": "[E]"
+}
 
 
 def console_input_handler(input_text=False, lower=True):

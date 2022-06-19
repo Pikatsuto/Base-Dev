@@ -5,7 +5,18 @@ from time import strftime
 
 from termcolor import colored
 
-from basedev.database.info import Info
+
+# TODO: Fix
+class Info:
+    debugMode = False
+
+
+consoleStartMessage = {
+    "user": "(U)",
+    "console": "[@]",
+    "log": "[L]",
+    "error": "[E]"
+}
 
 
 def exit_command():
@@ -23,10 +34,6 @@ def time_get(get_type):  # get time for easy read and name file compatible
         return time_file
     else:
         return "error time"
-
-
-with open("database/consoleStartMessage.json") as file:  # console start line
-    consoleStartMessage = json.load(file)
 
 
 def debug_mode(active_debug_mode):
