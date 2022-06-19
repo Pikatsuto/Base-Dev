@@ -13,7 +13,7 @@ $(VENV):
 
 start: $(VENV)
 	@echo "Starting base-dev"
-	$(VBIN)/python base-dev
+	$(VBIN)/python basedev
 
 clean:
 	rm -rf venv
