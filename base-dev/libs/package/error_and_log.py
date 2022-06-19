@@ -54,7 +54,7 @@ def time_get(get_type):  # get time for easy read and name file compatible
         return "error time"
 
 
-with open("database/consoleStartMessage.json") as file:  # console start ligne
+with open("database/consoleStartMessage.json") as file:  # console start line
     consoleStartMessage = json.load(file)
 
 
@@ -186,16 +186,16 @@ def error_handler(error, function):  # send and save errors
             errors_file = f.read()
 
         with open("errors/errors.txt") as f:
-            lines_of_erros = sum(1 for _ in f)
+            lines_of_errors = sum(1 for _ in f)
 
     else:
         errors_file = f"Start errors file : {time_read}\n"
-        lines_of_erros = 3
+        lines_of_errors = 3
 
     with open("errors/errors.txt", "w+") as f:
         f.write(f"{errors_file}\n{time_read} / {error_message_text}")
 
-    if lines_of_erros >= 997:  # create new errors file if errors ligne is > 1000
+    if lines_of_errors >= 997:  # create new errors file if errors line is > 1000
         if not os.path.exists("errors/old"):
             os.makedirs("errors/old")
 

@@ -1,7 +1,7 @@
 import os
 import shutil
 
-from libs.package import ErrorAndLog
+from libs.package import error_and_log
 
 file_name = "Main"
 
@@ -11,11 +11,11 @@ def check_env():
 
     try:
         if not os.path.exists("venv"):
-            ErrorAndLog.python_sys("-m venv venv")
-            ErrorAndLog.python("-m pip install --upgrade pip")
+            error_and_log.python_sys("-m venv venv")
+            error_and_log.python("-m pip install --upgrade pip")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
+        return error_and_log.error_handler(e, f"{file_name} {function_name}")
 
 
 def check_and_install():
@@ -26,10 +26,10 @@ def check_and_install():
             os.makedirs("database")
 
         if not os.path.exists("libs"):
-            return ErrorAndLog.error_handler("[FATAL] Command folder missing", "StartProgram CheckAndInstall")
+            return error_and_log.error_handler("[FATAL] Command folder missing", "StartProgram CheckAndInstall")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
+        return error_and_log.error_handler(e, f"{file_name} {function_name}")
 
 
 def start_and_restart():
@@ -37,7 +37,7 @@ def start_and_restart():
 
     try:
         while True:
-            ErrorAndLog.python("main.py")
+            error_and_log.python("main.py")
 
             if not os.path.exists("database/restart"):
                 break
@@ -45,7 +45,7 @@ def start_and_restart():
                 shutil.rmtree("database/restart")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
+        return error_and_log.error_handler(e, f"{file_name} {function_name}")
 
 
 def start_init():
@@ -57,7 +57,7 @@ def start_init():
         start_and_restart()
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
+        return error_and_log.error_handler(e, f"{file_name} {function_name}")
 
 
 start_init()

@@ -96,7 +96,7 @@
             "name": "ErrorAndLog.log",
             "Utilities": "log gestion function",
             "arguments": [
-                "output : is a print texte for your log",
+                "output : is a print text for your log",
                 "ifPrint : is if printing log",
                 "user : is user for your log"
             ]

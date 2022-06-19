@@ -4,25 +4,25 @@ import shutil
 import subprocess
 import sys
 
-from libs.package import ErrorAndLog
+from libs.package import error_and_log
 
-fileName = "Console"
+fileName = "console"
 
 try:
     from termcolor import colored
 
-    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check termcolor libs")
+    error_and_log.debug_test(function="No Function", my_file=fileName, number=0, condition="Check termcolor libs")
 except ModuleNotFoundError:
-    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check install libs")
-    ErrorAndLog.install_python_libs("termcolor")
+    error_and_log.debug_test(function="No Function", my_file=fileName, number=0, condition="Check install libs")
+    error_and_log.install_python_libs("termcolor")
 
 try:
     import requests
 
-    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
+    error_and_log.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
 except ModuleNotFoundError:
-    ErrorAndLog.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
-    ErrorAndLog.install_python_libs("requests")
+    error_and_log.debug_test(function="No Function", my_file=fileName, number=0, condition="Check request libs")
+    error_and_log.install_python_libs("requests")
 
 with open("database/consoleStartMessage.json") as file:
     consoleStartMessage = json.load(file)
@@ -32,47 +32,47 @@ def console_input_handler(input_text=False, lower=True):
     function_name = "consoleInput"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
+        error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
         if not input_text:
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If not input text")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If not input text")
             console_input = input(f'{colored(consoleStartMessage["user"], "green")}>> ')
         else:
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If input text")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If input text")
             console_input = input(
                 f'{colored(input_text, "cyan")} / {colored(consoleStartMessage["user"], "green")}>> '
             )
 
         if lower:
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If lower")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If lower")
             console_input.lower()
 
         if console_input == "exit":
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If exit")
-            ErrorAndLog.exit_command()
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If exit")
+            error_and_log.exit_command()
 
         if console_input == "restart":
-            ErrorAndLog.debug_test(
+            error_and_log.debug_test(
                 function=function_name, my_file=fileName, number=1, condition="If restart"
             )
-            ErrorAndLog.restart()
+            error_and_log.restart()
 
         elif console_input != "":
-            ErrorAndLog.debug_test(
+            error_and_log.debug_test(
                 function=function_name, my_file=fileName, number=1, condition="If console input is void"
             )
-            ErrorAndLog.log_handler(console_input, False, "user")
+            error_and_log.log_handler(console_input, False, "user")
 
         return console_input
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
 def motd():  # show start menu
     function_name = "motd"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Print MOTD")
+        error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="Print MOTD")
 
         print(colored("# --------------------------------------------------------------------------- #", "green"))
         print()
@@ -90,54 +90,54 @@ def motd():  # show start menu
         print(colored("\nWelcome", "green"), "for Base Dev shell", colored("\n[?]", "cyan"), "For Help command\n")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
 def clear():  # use clear command
     function_name = "clear"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
+        error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
         if os.name == "posix":
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Linux")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Linux")
             os.system("clear")
         else:
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Wine")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="If on Wine")
             os.system("cls")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
 def wget(file_name, file_link):
     function_name = "wget"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=0, condition="Initial While Wget")
+        error_and_log.debug_test(function=function_name, my_file=file_name, number=0, condition="Initial While Wget")
         if os.path.exists("database/dl"):
-            ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=1,
+            error_and_log.debug_test(function=function_name, my_file=file_name, number=1,
                                    condition="Initial if download file exist")
             shutil.rmtree("database/dl")
         os.mkdir("database/dl")
 
         file_name = f"database/dl/{file_name}"
         with open(file_name, "wb") as f:
-            ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=1, condition="Open download file")
+            error_and_log.debug_test(function=function_name, my_file=file_name, number=1, condition="Open download file")
             print(f"Downloading {file_name}")
             response = requests.get(file_link, stream=True)
             total_length = response.headers.get('content-length')
 
             if total_length is None:
-                ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=2,
+                error_and_log.debug_test(function=function_name, my_file=file_name, number=2,
                                        condition="if Length of file si void")
                 f.write(response.content)
             else:
-                ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=2,
+                error_and_log.debug_test(function=function_name, my_file=file_name, number=2,
                                        condition="if Length of file is defined")
                 dl = 0
                 total_length = int(total_length)
                 for data in response.iter_content(chunk_size=4096):
-                    ErrorAndLog.debug_test(function=function_name, my_file=file_name, number=3,
+                    error_and_log.debug_test(function=function_name, my_file=file_name, number=3,
                                            condition="for write data fin file")
                     dl += len(data)
                     f.write(data)
@@ -148,7 +148,7 @@ def wget(file_name, file_link):
         return file_name
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{file_name} {function_name}")
+        return error_and_log.error_handler(e, f"{file_name} {function_name}")
 
 
 def delete_dl_folder():
@@ -156,27 +156,27 @@ def delete_dl_folder():
 
     try:
         if os.path.exists("database/dl"):
-            ErrorAndLog.debug_test(
+            error_and_log.debug_test(
                 function=function_name, my_file=fileName, number=0, condition="if download folder exist"
             )
             shutil.rmtree("database/dl")
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
 def get_memory():
     function_name = "getMemory"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
+        error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial While")
         if os.name == "posix":
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1, condition="if on Linux")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=1, condition="if on Linux")
             total_memory, used_memory, free_memory = map(
                 int, os.popen('free -t -m').readlines()[-1].split()[1:])
 
         else:
-            ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="if on Windows")
+            error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="if on Windows")
             memory_info = subprocess.getoutput("wmic MemoryChip get /format:list")
             memory_info = memory_info.split("\n")
 
@@ -186,16 +186,16 @@ def get_memory():
         return total_memory
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
 def start_init():  # on start clear and shows menu
     function_name = "startInit"
 
     try:
-        ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial while")
+        error_and_log.debug_test(function=function_name, my_file=fileName, number=0, condition="Initial while")
         clear()
         motd()
 
     except Exception as e:
-        return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
+        return error_and_log.error_handler(e, f"{fileName} {function_name}")
