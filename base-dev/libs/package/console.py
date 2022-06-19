@@ -4,45 +4,13 @@ import shutil
 import subprocess
 import sys
 
+import requests
+from termcolor import colored
+
 from libs.package import error_and_log
 
 fileName = "console"
 
-try:
-    from termcolor import colored
-
-    error_and_log.debug_test(
-        function="No Function",
-        my_file=fileName,
-        number=0,
-        condition="Check termcolor libs",
-    )
-except ModuleNotFoundError:
-    error_and_log.debug_test(
-        function="No Function",
-        my_file=fileName,
-        number=0,
-        condition="Check install libs",
-    )
-    error_and_log.install_python_libs("termcolor")
-
-try:
-    import requests
-
-    error_and_log.debug_test(
-        function="No Function",
-        my_file=fileName,
-        number=0,
-        condition="Check request libs",
-    )
-except ModuleNotFoundError:
-    error_and_log.debug_test(
-        function="No Function",
-        my_file=fileName,
-        number=0,
-        condition="Check request libs",
-    )
-    error_and_log.install_python_libs("requests")
 
 with open("database/consoleStartMessage.json") as file:
     consoleStartMessage = json.load(file)

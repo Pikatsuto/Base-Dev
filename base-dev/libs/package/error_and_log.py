@@ -3,43 +3,14 @@ import os
 import shutil
 from time import strftime
 
+from termcolor import colored
+
 from database.info import Info
-
-
-def python(command):
-    if os.name == "posix":
-        os.system(f"venv/bin/python {command}")
-    else:
-        os.system(f"venv\\Scripts\\python.exe {command}")
-
-
-def python_sys(command):
-    if os.name == "posix":
-        os.system(f"python3 {command}")
-    else:
-        os.system(f"py {command}")
-
-
-def restart():
-    os.mkdir("database/restart")
-    print("Program not exit ? -> CTRL-C\n")
-    exit(0)
 
 
 def exit_command():
     print("Program not exit ? -> CTRL-C\n")
     exit(0)
-
-
-def install_python_libs(lib):
-    python(f"-m pip install {lib}")
-    restart()
-
-
-try:
-    from termcolor import colored
-except ModuleNotFoundError:
-    install_python_libs("termcolor")
 
 
 def time_get(get_type):  # get time for easy read and name file compatible
