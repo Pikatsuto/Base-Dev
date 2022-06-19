@@ -8,9 +8,9 @@ from database.info import Info
 
 def python(command):
     if os.name == "posix":
-        os.system(f".env/bin/python {command}")
+        os.system(f"venv/bin/python {command}")
     else:
-        os.system(f".env\\Scripts\\python.exe {command}")
+        os.system(f"venv\\Scripts\\python.exe {command}")
 
 
 def python_sys(command):
@@ -43,13 +43,13 @@ except ModuleNotFoundError:
 
 
 def time_get(get_type):  # get time for easy read and name file compatible
-    timeRead = strftime("%Y-%m-%d %H:%M:%S")
-    timeFile = strftime("%Y-%m-%d_%H-%M-%S")
+    time_read = strftime("%Y-%m-%d %H:%M:%S")
+    time_file = strftime("%Y-%m-%d_%H-%M-%S")
 
     if get_type == "read":
-        return timeRead
+        return time_read
     elif get_type == "file":
-        return timeFile
+        return time_file
     else:
         return "error time"
 
@@ -79,8 +79,8 @@ def log_handler(output, if_print, user):  # send and save logs
     if not os.path.exists("logs"):
         os.makedirs("logs")
 
-    timeRead = time_get("read")
-    timeFile = time_get("file")
+    time_read = time_get("read")
+    time_file = time_get("file")
 
     if user == "log":
         my_log_message = f'{colored(consoleStartMessage[user], "blue")}>> {output}'
@@ -90,126 +90,126 @@ def log_handler(output, if_print, user):  # send and save logs
         my_log_message = f'{colored(consoleStartMessage[user], "green")}>> {output}'
     elif user == "console":
         my_log_message = f'{colored(consoleStartMessage[user], "yellow")}>> {output}'
-    logMessageText = f"{consoleStartMessage[user]}>> {output}"
+    log_message_text = f"{consoleStartMessage[user]}>> {output}"
 
     if if_print:
         print(my_log_message)
 
     if os.path.exists("logs/logs.txt"):  # read, count logs and add time in logs
         with open("logs/logs.txt", "r+") as f:
-            logsFile = f.read()
+            logs_file = f.read()
 
         with open("logs/logs.txt") as f:
-            ligneOfLogs = sum(1 for _ in f)
+            lines_of_logs = sum(1 for _ in f)
 
     else:
-        logsFile = f"Start logs file : {timeRead}\n"
-        ligneOfLogs = 3
+        logs_file = f"Start logs file : {time_read}\n"
+        lines_of_logs = 3
 
     with open("logs/logs.txt", "w+") as f:  # save logs
-        f.write(f"{logsFile}\n{timeRead} / {logMessageText}")
+        f.write(f"{logs_file}\n{time_read} / {log_message_text}")
 
-    if ligneOfLogs >= 997:  # create new logs file if logs ligne is > 1000
+    if lines_of_logs >= 997:  # create new logs file if logs line is > 1000
         if not os.path.exists("logs/old"):
             os.makedirs("logs/old")
 
         with open("logs/logs.txt", "w+") as f:
-            f.write(f"{logsFile}\n{timeRead} / {logMessageText}\n\nEnd logs file : {timeRead}")
+            f.write(f"{logs_file}\n{time_read} / {log_message_text}\n\nEnd logs file : {time_read}")
 
-        shutil.move("logs/logs.txt", f"logs/old/logs_end_{timeFile}.txt")
+        shutil.move("logs/logs.txt", f"logs/old/logs_end_{time_file}.txt")
 
-        oldLogsFiles = os.listdir("logs/old")
-        if len(oldLogsFiles) >= 10:
-            shutil.make_archive(f"logs/oldZip/logs_end_{timeFile}", "zip", "logs/old")
+        old_logs_files = os.listdir("logs/old")
+        if len(old_logs_files) >= 10:
+            shutil.make_archive(f"logs/oldZip/logs_end_{time_file}", "zip", "logs/old")
             shutil.rmtree("logs/old")
 
     return my_log_message
 
 
 def error_handler(error, function):  # send and save errors
-    FATALE = False
+    fatal = False
 
-    timeRead = time_get("read")
-    timeFile = time_get("file")
+    time_read = time_get("read")
+    time_file = time_get("file")
 
-    errorMessage = f'{colored(consoleStartMessage["error"], "red")}>> {function} : {error}'
-    errorMessageText = f'{consoleStartMessage["error"]}>> {function} : {error}'
-    logErrorMessage = f"{function} : {error}"
+    error_message = f'{colored(consoleStartMessage["error"], "red")}>> {function} : {error}'
+    error_message_text = f'{consoleStartMessage["error"]}>> {function} : {error}'
+    log_error_message = f"{function} : {error}"
 
     if not os.path.exists("errors"):
         os.makedirs("errors")
 
     if os.path.exists("errors/errorsPerSecond.json"):  # read file of count error in one second
         with open("errors/errorsPerSecond.json", "r+") as f:
-            errorsNumberJson = json.load(f)
-            errorsNumber = errorsNumberJson["errorsNumber"]
-            timeForLastError = errorsNumberJson["timeForLastError"]
-            readErrorMessage = errorsNumberJson["readErrorMessage"]
+            errors_number_json = json.load(f)
+            errors_number = errors_number_json["errors_number"]
+            time_for_last_error = errors_number_json["time_for_last_error"]
+            read_error_message = errors_number_json["read_error_message"]
     else:
-        errorsNumberJson = {
-            "errorsNumber": None,
-            "timeForLastError": None,
-            "readErrorMessage": None
+        errors_number_json = {
+            "errors_number": None,
+            "time_for_last_error": None,
+            "read_error_message": None
         }
         with open("errors/errorsPerSecond.json", "w+") as f:
-            json.dump(errorsNumberJson, f)
+            json.dump(errors_number_json, f)
 
-        errorsNumber = 0
-        timeForLastError = ""
+        errors_number = 0
+        time_for_last_error = ""
 
-    errorsNumber += 1
+    errors_number += 1
 
-    if errorsNumber >= 5 and timeForLastError == timeFile and readErrorMessage == errorMessage:  # stop program if 5
+    if errors_number >= 5 and time_for_last_error == time_file and read_error_message == error_message:  # stop program if 5
         # repetitive error
-        errorsNumber = 0
-        errorMessage = f'{colored(consoleStartMessage["error"], "red")}>> [FATALE] {function} : {error}'
-        logErrorMessage = f"[FATALE] {function} : {error}"
-        FATALE = True
+        errors_number = 0
+        error_message = f'{colored(consoleStartMessage["error"], "red")}>> [FATAL] {function} : {error}'
+        log_error_message = f"[FATAL] {function} : {error}"
+        fatal = True
 
-    elif timeForLastError != timeFile:  # reset file count error if one second over
-        errorsNumber = 0
+    elif time_for_last_error != time_file:  # reset file count error if one second over
+        errors_number = 0
 
-    errorsNumberJson = {
-        "errorsNumber": errorsNumber,
-        "timeForLastError": timeFile,
-        "readErrorMessage": errorMessage
+    errors_number_json = {
+        "errors_number": errors_number,
+        "time_for_last_error": time_file,
+        "read_error_message": error_message
     }
 
     with open("errors/errorsPerSecond.json", "w+") as f:  # right file error in one second
-        json.dump(errorsNumberJson, f)
+        json.dump(errors_number_json, f)
 
-    log_handler(logErrorMessage, False, "error")
-    log_handler(logErrorMessage, True, "error")
+    log_handler(log_error_message, False, "error")
+    log_handler(log_error_message, True, "error")
 
     if os.path.exists("errors/errors.txt"):  # read, count errors and add time in errors
         with open("errors/errors.txt", "r+") as f:
-            errorsFile = f.read()
+            errors_file = f.read()
 
         with open("errors/errors.txt") as f:
-            ligneOfErrors = sum(1 for _ in f)
+            lines_of_erros = sum(1 for _ in f)
 
     else:
-        errorsFile = f"Start errors file : {timeRead}\n"
-        ligneOfErrors = 3
+        errors_file = f"Start errors file : {time_read}\n"
+        lines_of_erros = 3
 
     with open("errors/errors.txt", "w+") as f:
-        f.write(f"{errorsFile}\n{timeRead} / {errorMessageText}")
+        f.write(f"{errors_file}\n{time_read} / {error_message_text}")
 
-    if ligneOfErrors >= 997:  # create new errors file if errors ligne is > 1000
+    if lines_of_erros >= 997:  # create new errors file if errors ligne is > 1000
         if not os.path.exists("errors/old"):
             os.makedirs("errors/old")
 
         with open("errors/errors.txt", "w+") as f:
-            f.write(f"{errorsFile}\n{timeRead} / {errorMessageText}\n\nEnd errors file : {timeRead}")
+            f.write(f"{errors_file}\n{time_read} / {error_message_text}\n\nEnd errors file : {time_read}")
 
-        shutil.move("errors/errors.txt", f"errors/old/errors_end_{timeFile}.txt")
+        shutil.move("errors/errors.txt", f"errors/old/errors_end_{time_file}.txt")
 
-        oldErrorsFiles = os.listdir("errors/old")
-        if len(oldErrorsFiles) >= 10:
-            shutil.make_archive(f"errors/oldZip/errors_end_{timeFile}", "zip", "errors/old")
+        old_errors_files = os.listdir("errors/old")
+        if len(old_errors_files) >= 10:
+            shutil.make_archive(f"errors/oldZip/errors_end_{time_file}", "zip", "errors/old")
             shutil.rmtree("errors/old")
 
-    if FATALE:
+    if fatal:
         exit(0)
 
-    return errorMessage
+    return error_message

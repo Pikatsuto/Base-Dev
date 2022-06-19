@@ -87,13 +87,13 @@ def motd():  # show start menu
         print()
         print("                                  By Pikatsuto")
         print(colored("# --------------------------------------------------------------------------- #", "green"))
-        print(colored("\nWelcome", "green"), "for Base Dev shell", colored("\n[?]", "cyan"), "For Help commande\n")
+        print(colored("\nWelcome", "green"), "for Base Dev shell", colored("\n[?]", "cyan"), "For Help command\n")
 
     except Exception as e:
         return ErrorAndLog.error_handler(e, f"{fileName} {function_name}")
 
 
-def clear():  # use clear commande
+def clear():  # use clear command
     function_name = "clear"
 
     try:

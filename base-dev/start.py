@@ -10,8 +10,8 @@ def check_env():
     function_name = "checkEnv"
 
     try:
-        if not os.path.exists(".env"):
-            ErrorAndLog.python_sys("-m venv .env")
+        if not os.path.exists("venv"):
+            ErrorAndLog.python_sys("-m venv venv")
             ErrorAndLog.python("-m pip install --upgrade pip")
 
     except Exception as e:

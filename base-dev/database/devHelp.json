@@ -70,7 +70,7 @@
         },
         {
             "name": "ErrorAndLog.python",
-            "Utilities": "Start python command in .env",
+            "Utilities": "Start python command in venv",
             "arguments": [
                 "command : Your python command"
             ]

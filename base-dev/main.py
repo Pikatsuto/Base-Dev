@@ -7,7 +7,7 @@ def console():
     function_name = "console"
 
     try:
-        command_liste = {
+        commands = {
             "allCommand": {
                 "clear": {
                     "command": Console.clear,
@@ -48,11 +48,11 @@ def console():
                 ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=1,
                                        condition="else: check json command")
                 console_input_split = console_input.split(" ")
-                arguments_liste = console_input_split
+                arguments = console_input_split
                 command_save = False
                 arguments_ok = False
 
-                command = command_liste["allCommand"]
+                command = commands["allCommand"]
                 if console_input_split[0] in command:
                     ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=2,
                                            condition="if your command in all command")
@@ -60,7 +60,7 @@ def console():
                     if command[console_input_split[0]]["arguments"]:
                         ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=3,
                                                condition="if your command have argument")
-                        if not command[console_input_split[0]]["arguments"]["default"] and len(arguments_liste) == 1:
+                        if not command[console_input_split[0]]["arguments"]["default"] and len(arguments) == 1:
                             ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=4,
                                                    condition="if your command have default argument")
                             arguments = command[console_input_split[0]]["arguments"]["default"][0]
@@ -68,7 +68,7 @@ def console():
                         else:
                             ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=4,
                                                    condition="else your command not have default argument")
-                            for argumentsInput in arguments_liste:
+                            for argumentsInput in arguments:
                                 ErrorAndLog.debug_test(function=function_name, my_file=fileName, number=5,
                                                        condition="for your argument on all argument")
                                 if argumentsInput in command[console_input_split[0]]["arguments"]:
