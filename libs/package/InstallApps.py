@@ -1,6 +1,5 @@
 import os
-from basedev.libs.package import console
-from basedev.libs.package import error_and_log
+from libs.package import console, error_and_log
 
 fileName = "InstallApps"
 

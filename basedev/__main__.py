@@ -1,4 +1,4 @@
-from basedev.libs.package import console, help, error_and_log
+from libs.package import help, console, error_and_log
 
 fileName = "Main"
 
@@ -149,7 +149,7 @@ def main():
                 command_save()
             else:
                 error_and_log.log_handler(
-                    f'command "{console_input}" no fund', True, "log"
+                    f'command "{console_input}" not found', True, "log"
                 )
 
     except Exception as e:
@@ -173,4 +173,5 @@ def start_init():
         return error_and_log.error_handler(e, f"{fileName} {function_name}")
 
 
-start_init()
+if __name__ == '__main__':
+    start_init()

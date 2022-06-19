@@ -1,4 +1,3 @@
-import json
 import os
 import shutil
 import subprocess
@@ -7,7 +6,7 @@ import sys
 import requests
 from termcolor import colored
 
-from basedev.libs.package import error_and_log
+from libs.package import error_and_log
 
 fileName = "console"
 
