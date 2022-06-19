@@ -10,3 +10,6 @@ venv
 logs
 errors
 *.txt
+
+# Dependencies
+!requirements.txt
