@@ -7,7 +7,7 @@ import sys
 import requests
 from termcolor import colored
 
-from libs.package import error_and_log
+from basedev.libs.package import error_and_log
 
 fileName = "console"
 

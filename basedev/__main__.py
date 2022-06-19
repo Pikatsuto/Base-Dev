@@ -1,4 +1,4 @@
-from libs.package import console, help, error_and_log
+from basedev.libs.package import console, help, error_and_log
 
 fileName = "Main"
 

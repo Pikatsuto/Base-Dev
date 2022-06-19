@@ -5,7 +5,7 @@ from time import strftime
 
 from termcolor import colored
 
-from database.info import Info
+from basedev.database.info import Info
 
 
 def exit_command():
