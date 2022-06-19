@@ -1,4 +1,12 @@
-.env
-errors
-logs
+# PyCharm configuration folder
 .idea
+
+# Python env
+__pycache__
+*.py[cod]
+venv
+
+# Logs
+logs
+errors
+*.txt
