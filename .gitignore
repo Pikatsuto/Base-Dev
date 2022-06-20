@@ -1,4 +1,21 @@
-.env
-errors
-logs
+# PyCharm configuration folder
 .idea
+
+# Packaging
+*.egg-info
+
+# Python env
+__pycache__
+*.py[cod]
+venv
+
+# Logs
+logs
+errors
+*.txt
+
+# Testing
+_
+
+# Dependencies
+!requirements.txt
