@@ -17,7 +17,6 @@ start: $(VENV)
 
 clean:
 	rm -rf venv
-	rm -rf base-dev/logs/.txt base-dev/errors/*.txt
 	rm -rf *.-egg-info
 
 .PHONY: all start clean
